@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samochody Polskie lat 70-tych</title>
+    <style>
+        img{
+            width: 300px;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .auto{
+            width: 30%;
+            text-align: center;
+        }
+
+        a{
+            color: black;
+            margin: 0;
+            outline: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Samochody Polskie lat 70-tych</h1>
+    <a href="/preferences">Preferencje</a>
+    
+    <% Object.keys(carsData).forEach(function(car) { %>
+        <div class="auto">
+            <h2><%= carsData[car].name %></h2>
+            <img src="/images/<%= car %>.jpg" alt="<%= carsData[car].name %>">
+            <p><%= carsData[car].description %></p>
+            <form action="/preferences" method="POST">
+                <input type="hidden" name="car" value="<%= car %>">
+                <label>
+                    <input type="radio" name="like" value="true" <% if (typeof preferences !== 'undefined' && preferences[car] === true) { %>checked<% } %>> Lubię
+                </label>
+                <label>
+                    <input type="radio" name="like" value="false" <% if (typeof preferences !== 'undefined' && preferences[car] === false) { %>checked<% } %>> Nie lubię
+                </label>
+                <button type="submit">Zapisz preferencję</button>
+            </form>
+        </div>
+    <% }); %>
+    
+
+</body>
+</html>

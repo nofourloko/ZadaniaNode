@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencje</title>
+</head>
+<body>
+    <h1>Preferencje użytkownika</h1>
+    
+    <% Object.keys(preferences).forEach(function(car) { %>
+        <div>
+            <h2><%= carsData[car].name %></h2>
+            <% if (preferences[car] === true) { %>
+                <p>Użytkownik lubi ten samochód.</p>
+            <% } else { %>
+                <p>Użytkownik nie lubi tego samochodu.</p>
+            <% } %>
+        </div>
+    <% }); %>
+    
+    <a href="/">Powrót do strony głównej</a>
+</body>
+</html>

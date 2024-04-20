@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px;
+          }
+          
+          td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        main a {
+            display: block;
+            width: 200px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        img{
+            width: 500px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        div{
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Polskie ciężarówki lata 70-te</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Strona główna</a></li>
+                <li><a href="/about">O nas</a></li>
+                <li><a href="/contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h2><%= truck.name %></h2>
+        <img src="/images/<%= truck.image %>" alt="<%= truck.name %>">
+        <table>
+            <tr>
+                <th>Parametr</th>
+                <th>Wartość</th>
+            </tr>
+            <tr>
+                <td>Rok produkcji</td>
+                <td><%= truck.year %></td>
+            </tr>
+            <tr>
+                <td>Moc</td>
+                <td><%= truck.power %></td>
+            </tr>
+        </table>
+    </div>
+   
+    <footer>
+        <p>&copy; 2024 Polskie ciężarówki lata 70-te</p>
+    </footer>
+</body>
+</html>
+
